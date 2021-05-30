@@ -6,6 +6,6 @@ for i in range(10):
 
 for i in nums:
     if i not in rems:
-      rems.append(i)
+        rems.append(i)
 
 print(len(rems))

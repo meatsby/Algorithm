@@ -22,3 +22,22 @@ print(str('*'*i).rjust(n))
 while 문을 사용할 때 테스트 개수가 주어지지 않았을 경우 try, except 를 이용
 
 --------------------------------------------------
+
+연속되는 배열에서 가산점 부여하고 싶을 때
+
+for i in range(a):
+    b = input()
+    sum = 0
+    c = 1
+    for i in b:
+        if i == 'O':
+            sum += c
+            c += 1
+        else:
+            c = 1
+    print(sum)
+
+--------------------------------------------------
+
+for score in nums[1:] : nums 라는 리스트 1번째부터 iteration
+(f'{rate:.3f}%') : rate 이라는 숫자를 .3f 까지 출력
