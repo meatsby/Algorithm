@@ -6,10 +6,10 @@ for i in s:
     a[ord(i)-97] += 1
 
 for i in a:
-    if i != 0:
+    if i == max(a):
         l.append(i)
 
-if len(l) != len(set(l)):
+if len(l) != 1:
     print('?')
 else:
     print(chr(a.index(max(a))+97).upper())
