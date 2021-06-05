@@ -77,3 +77,27 @@ list(word) == sorted(word,key = word.find)
 
 8_7_2839.py 다시 풀어보기
 3씩 빼보면서 5의 배수를 찾았어야 하는 생각을 떠올렸어야지
+
+--------------------------------------------------
+
+# 소수 판별
+def prime(x):
+    if x == 1:
+        return False
+    else:
+        for i in range(2, int(math.sqrt(x)) + 1):
+            if x % i == 0:
+                return False
+        return True
+
+--------------------------------------------------
+
+# 소인수분해
+n = int(input())
+i = 2
+while n != 1:
+    if n % i == 0:
+        n /= i
+        print(i)
+    else:
+        i += 1
