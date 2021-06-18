@@ -144,7 +144,7 @@ List Comprehension
     Iterable : List, Tuple, Set, Dictionary, String 등이 있음
 
 배열 개념
-    
+    --
 
 우리밋 뽀개고
 이테코 뽀개기
