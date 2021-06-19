@@ -144,7 +144,15 @@ List Comprehension
     Iterable : List, Tuple, Set, Dictionary, String 등이 있음
 
 배열 개념
-    --
+    2차원 배열 선언
+        array = [[0 for i in range(5)] for i in range(3)]
+    C 나 Java 는 배열공간을 선언해주고 시작하는데 (Array)
+    Python 은 배열공간을 선언함과 동시에 초기화 (List)
+    numpy library 를 이용해서 간편하게 2차원배열 선언 가능 (인공지능, 빅데이터 필수 library)
+        import numpy
+        
+        array = numpy.arange(15).reshape(3,5) # arange 를 통해 15칸을 잡아두고 reshape 으로 2차원
+        array = numpy.zeros((3,5)) # 3,5 배열에 0 할당
+        array = numpy.ones((3,5)) # 3,5 배열에 1 할당
 
-우리밋 뽀개고
 이테코 뽀개기
