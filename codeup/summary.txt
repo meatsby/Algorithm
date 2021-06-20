@@ -154,5 +154,3 @@ List Comprehension
         array = numpy.arange(15).reshape(3,5) # arange 를 통해 15칸을 잡아두고 reshape 으로 2차원
         array = numpy.zeros((3,5)) # 3,5 배열에 0 할당
         array = numpy.ones((3,5)) # 3,5 배열에 1 할당
-
-이테코 뽀개기
