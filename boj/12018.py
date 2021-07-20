@@ -1,5 +1,4 @@
 # Yonsei TOTO
-# 우선순위 큐 공부하자
 
 n, m = map(int, input().split())
 required = []
@@ -11,8 +10,7 @@ for i in range(n):
     if P < L:
         required.append(1)
     else:
-        required.append(mile[L-1]+1)
-
+        required.append(mile[L-1])
 
 for i in sorted(required):
     m -= i
