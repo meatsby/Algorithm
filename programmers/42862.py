@@ -1,4 +1,4 @@
-# Level1 체육복
+# Lv1 체육복
 # 백준 2891 강풍과 카약과 유사한 문제
 
 def solution(n, lost, reserve):

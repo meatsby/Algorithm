@@ -1,4 +1,4 @@
-# Level1 포켓몬
+# Lv1 포켓몬
 
 def solution(nums):
     types = len(set(nums))
