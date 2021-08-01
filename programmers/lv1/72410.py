@@ -1,4 +1,6 @@
 # Lv1 신규 아이디 추천
+# 정규식 표현 사용 가능
+# while '..' in answer: answer = answer.replace('..', '.') 사용 가능
 
 def solution(new_id):
     id = list(new_id)
