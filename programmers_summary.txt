@@ -1,0 +1,3 @@
+zip() 공부하기
+정규표현식 공부하기
+divmod(x,y) returns (x//y, x%y)
