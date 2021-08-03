@@ -1,4 +1,5 @@
 zip() 공부하기
 정규표현식 공부하기
 divmod(x,y) returns (x//y, x%y)
-
+itertools 공부하기
+에라토스테네스의 체 공부하기

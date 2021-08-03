@@ -68,7 +68,7 @@ for i in c:
 --------------------------------------------------
 
 그룹단어 확인
-list(word) == sorted(word,key = word.find)
+list(word) == sorted(word, key = word.find)
 
 --------------------------------------------------
 
