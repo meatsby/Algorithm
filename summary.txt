@@ -1,0 +1,134 @@
+숫자처리함수
+    abs(-5) # 5
+    pow(4, 2) # 16
+    max(5, 12) # 12
+    min(5, 12) # 5
+    round(3.14) # 3
+
+math library
+    from math import * # math lib 에 있는 모든 기능을 쓰겠다.
+    floor(4.99) # 4
+    ceil(3.14) # 4
+    sqrt(16) # 4
+
+랜덤함수 # 무작위로 숫자를 뽑아줌
+    from random import *
+    random() # 0.0 ~ 1.0 미만의 무작위 실수를 반환
+    int() # 정수형으로 변환
+    randrange(1, 46) # 1 ~ 46 미만의 무작위 실수를 반환
+    randint(1, 45) # 1 ~ 45 이하의 무작위 실수를 반환
+    suffle(lst) # lst 값의 위치를 무작위로 변경
+    sample(lst, 1) # lst 에서 무작위 값을 1 개 반환
+
+문자열처리함수
+    var = 'Python is Amazing'
+    var.lower() # 소문자 변환
+    var.upper() # 대문자 변환
+    var[0].isupper() # 대문자인지 확인 (True, False)
+    len(var) # 문자열의 길이 반환
+    var.replace('Python', 'Java') # 'Python' 을 'Java' 로 변환
+    
+    index = var.index('n')
+    var.index('n') # 'n' 이라는 문자의 위치 반환
+    var.index('n', inddx + 1) # 처음 찾은 index 다음에 나오는 'n' 문자 위치 반환
+    var.find('Java') # 원하는 값이 없을 경우 -1 을 반환
+    # .index 와 .find 의 차이 : 원하는 값이 없을 경우 index 는 에러 find 는 -1
+    var.count('n') # 'n' 이 총 몇번 나오는지 반환
+    
+문자열포맷
+    Method 1
+        print('I am %d years old.' %20) # %d 는 정수만 반환 가능 decimal
+        print('I like %s.' %'Python') # %s 는 문자열만 반환 가능 string
+        print('Apple starts with %c. %'A') # %c 는 한문자만 반환 가능 character
+        print('I like %s and %s.' %('blue', 'red')) # 뒷 부분에 소괄호를 이용하여 여러개 반환 가능
+    Method 2
+        print('I am {} years old.'.format(20)) # % 대신에 format 함수를 활용하여 {}로 같은 기능 활용 가능
+        print('I like {0} and {1}.'.format('blue', 'red')) # {} 안에 index 를 부여함으로써 format 함수에 들어있는 값들을 순서에 맞게 반환 가능
+        print('I am {age} and I like {color}.'.format(age=20, color='red')) # {} 안에 변수를 선언함으로써 format 함수에 들어있는 값들을 변수에 맞게 반환 가능
+    Method 3
+        age = 20
+        color = 'red'
+        print(f'I am {age} and I like {color}.') # .format() 대신 f 로도 사용 가능
+
+탈출 문자
+    \n # 줄바꿈
+    \' # 작은 따옴표를 문자로 변환
+    \\ # '\' 문자로 변환
+    \r # 커서를 맨 앞으로 이동
+    \b # 한 글자 삭제
+    \t # 탭
+    
+리스트
+    subway = ['유재석', '조세호', '박명수', '유재석']
+    subway.index('조세호') # '조세호' 가 몇번째 자리에 있는지
+    subway.append('하하') # '하하' 를 맨 마지막에 추가
+    subway.insert(1, '정형돈') # '정형돈' 을 1번째 자리에 끼워넣음
+    subway.pop() # 맨 마지막 원소를 반환 후 제거
+    subwat.count('유재석') # '유재석' 이 몇번 나오는지 확인
+    
+정렬
+    num = [5, 2, 4, 3, 1]
+    num.sort() # 순서대로 정렬
+    num.reverse() # 순서뒤집어서 정렬
+    num.clear() # num 리스트를 초기화
+    
+    num.extend(subway) # num 에 subway 를 뒤에 붙힘
+
+사전
+    dict = {3:'three', 100:'hundred'} # key:value 패턴으로 자료 저장
+    print(dict[3]) # key 가 3 인 value 를 출력
+    print(dict.get(3)) # key 가 3 인 value 를 출력
+    # [] 와 .get 의 차이 : 해당 key 가 없을 경우 [] 는 에러 후 프로그램 종료 .get 은 None 을 출력 (문자열처리함수에서 .index 와 .find 와 비슷한 내용)
+    print(dict.get(5), '사용 가능') # key 가 5인 value 가 없을 경우 '사용 가능' 출력
+    print(3 in dict) # 3 이라는 key 가 dict 에 있을 경우 True 출력 없을 경우 False
+    dict['C-20'] = '이십' # 새로운 key 와 value 선언
+    dict[3] = '삼' # 기존에 있던 key 를 update
+    del dict[100] # key 가 100 인 k,v 를 삭제
+    print(dict.keys()) # key 값들만 출력
+    print(dict.values()) # value 값들만 출력
+    print(dict.items()) # k,v 모두 출력
+    dict.clear() # dict 의 모든 값 삭제
+    
+튜플 # 변경되지 않는 list, list 보다 속도가 빠름
+    menu = ('돈까스', '치즈까스')
+
+세트 # 집합, set, 중복 안됨, 순서 없음
+    set = {1,2,3,3,3} # {1,2,3}
+    java = {'유재석', '김태호', '양세형'}
+    python = set(['유재석', '박명수'])
+
+교집합 # java 와 python 을 할 수 있는 개발자
+    print(java & python)
+    print(java.intersection(python))
+
+합집합 # java 혹은 python 을 할 수 있는 개발자
+    print(java | python)
+    print(java.union(python))
+
+차집합 # java 는 할 수 있지만 python 은 모르는 개발자
+    print(java - python)
+    print(java.difference(python))
+
+# python 을 배운 개발자
+    python.add('김태호')
+
+# java 를 까먹음
+    java.remove('김태호')
+
+자료구조의 변경
+    menu = {'커피', '우유', '주스'}
+    menu = list(menu) # set 이였던걸 list 로
+    menu = tuple(menu) # list 였던걸 tuple 로
+    menu = set(menu) # tuple 이였던걸 set 으로
+
+continue 와 break
+    반복문에서 continue 명령이 있을 경우 다음 iteration 으로 넘어감
+    반복문에서 break 명령이 있을 경우 반복문 탈출
+
+한 줄 for
+    
+
+
+
+
+
