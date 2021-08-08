@@ -259,6 +259,67 @@ with # 파일을 읽고 쓰는데 있어서 코드가 간결해지고 매번 파
     with open('study.txt', 'r', encoding='utf8') as study_file:
         print(study_file.read())
 
+클래스
+    # 마린 : 공격 유닛, 군인, 총을 쏠 수 있음
+    name = '마린'
+    hp = 40
+    damage = 5
+    
+    print('{} 유닛이 생성되었습니다.'.format(name))
+    print('체력 {0}, 공격력 {1}\n'.format(hp, damage))
+
+    # 탱크 : 공격 유닛, 탱크, 포를 쏠 수 있음, 일반모드/시즈모드
+    tank_name = '탱크'
+    tank_hp = 150
+    tank_damage = 35
+
+    print('{} 유닛이 생성되었습니다.'.format(tank_name))
+    print('체력 {0}, 공격력 {1}\n'.format(tank_hp, tank_damage))
+
+    def attack(name, location, damage):
+        print('{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]'.format(name, location, damage))
+
+    attack(name, '1시', damage)
+    attack(tank_name, '1시', tank_damage)
+
+    # Class 는 붕어빵틀 과 같음
+
+    class Unit:
+        def __init__(self, name, hp, damage):
+            self.name = name
+            self.hp = hp
+            self.damage = damage
+            print('{0} 유닛이 생성되었습니다.'.format(self.name))
+            print('체력 {0}, 공격력 {1}'.format(self.hp, self.damage))
+
+    marine1 = Unit('마린', 40, 5)
+    marine2 = Unit('마린', 40, 5)
+    tank1 = Unit('탱크', 150, 35)
+
+__init__ # 생성자, 객체는 어떤 클래스로부터 만들어지는것들, 마린과 탱크는 Unit 클래스의 인스턴스라고함
+
+멤버변수 # self.name, self.hp, self.damage, 클래스 내에서 정의된 변수, 클래스내에서 초기화할수도 있고 쓸수도 있음
+
+    wraith1 = Unit('레이스', 80, 5)
+    print('유닛 이름 : {0}, 공격력 : {1}'.format(wraith1.name, wraith1.damage)) # 클래스 외부에서 .name 과 같은 멤버변수에 접근 가능
+
+    wraith2 = Unit('빼앗은 레이스', 80, 5)
+    wraith2.clocking = True # clocking 이라는 변수는 외부에서 선언
+    
+    if wraith2.clocking == True:
+        print('{0} 는 현재 클로킹 상태입니다.'.format(wraith2.name))
+    # 클래스 외부에서 변수 확장 가능, 그 변수는 내가 확장한 객체에만 적용이 됨
+    # 파이썬에서는 외부에서 어떤객체에 추가로 변수를 만들어서 사용 가능
+
+
+
+
+
+
+
+
+
+
 
 
 
