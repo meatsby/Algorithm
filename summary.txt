@@ -180,6 +180,42 @@ continue 와 break
     print('남은 총 : {0}'.format(gun))
 
 표준입출력
+    print('Python', 'Java', 'JavaScript', sep=' vs ') # sep 를 통해 출력간 사이에 어떤 문자가 들어갈 지 설정 가능
+    print('Python', 'Java', 'JavaScript', end='?') # end 를 통해 출력문 마지막에 들어갈 문자를 설정 (기본값은 줄바꿈)
+    
+    score = {'수학':0, '영어':50, '코딩':100}
+    for subject, score in scores.items():
+        print(subject.ljust(8), str(score).rjust(4), sep=':')
+        ljust() = 왼쪽 정렬
+        rjust() = 오른쪽 정렬
+
+    for num in range(1, 21):
+        print('대기번호 : ' + str(num).zfill(3))
+        zfill() = 세개 공간을 확보 후 남은 공간은 0 으로 채우기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
