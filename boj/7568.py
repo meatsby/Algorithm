@@ -1,6 +1,7 @@
 # 덩치
 # 브루트포스
 # 정답 참고
+# for문 두 번
 
 N = int(input())
 people = [tuple(map(int, input().split())) for i in range(N)]
