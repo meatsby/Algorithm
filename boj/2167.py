@@ -1,4 +1,5 @@
 # 2차원 배열의 합
+# 정답 참고
 
 import sys
 input = sys.stdin.readline
