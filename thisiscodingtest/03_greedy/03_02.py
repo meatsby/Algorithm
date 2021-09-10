@@ -3,7 +3,7 @@ data = sorted([2, 4, 5, 4, 6], reverse=True)
 result = 0
 count = 0
 
-## My Answer
+# My Answer
 # if data[0] == data[1]:
 #     print(data[0]*8)
 # else:
