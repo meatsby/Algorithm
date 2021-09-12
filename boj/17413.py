@@ -4,6 +4,7 @@ import sys
 
 input = sys.stdin.readline
 
+# 첫 풀이
 s = input().rstrip()
 temp = ""
 ans = ""
@@ -32,3 +33,22 @@ for i in s:
         temp += i
     
 print(ans + temp[::-1])
+
+# 정답 참고 후 풀이
+s = input().rstrip()
+s = s.replace("<", "@<")
+s = s.replace(">", ">@")
+ss = s.split("@")
+ans = ""
+
+for i in ss:
+    if len(i) != 0:
+        if "<" in i:
+            ans += i
+        elif " " in i:
+            l = [t[::-1] for t in i.split()]
+            ans += " ".join(l)
+        else:
+            ans += i[::-1]
+
+print(ans)
