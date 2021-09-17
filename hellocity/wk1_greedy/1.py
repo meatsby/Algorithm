@@ -1,4 +1,4 @@
-# 세탁소 사장 동혁
+# 백준 2720번: 세탁소 사장 동혁
 
 import sys
 input = sys.stdin.readline

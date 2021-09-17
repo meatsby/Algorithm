@@ -1,4 +1,4 @@
-# 동전 0
+# 백준 11047번: 동전 0
 
 import sys
 input = sys.stdin.readline
