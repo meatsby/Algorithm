@@ -18,7 +18,6 @@ def odd_snail(n, num):
     snail[n//2][n//2] = 1
     d = n-1
     a, b = n**2, (n**2)-d
-    x, y = 0, 0
 
     for s in range(n//2):
         x = s
@@ -42,12 +41,10 @@ def even_snail(n, num):
     dx = [-1, 0, 1, 0]
     dy = [0, -1, 0, 1]
 
-    snail[n//2][n//2] = 1
     d = n-1
     a, b = n**2, (n**2)-d
-    x, y = 0, 0
 
-    for s in range(n//2):
+    for s in range(n-1, (n-1)//2, -1):
         x = s
         y = s
         for r in range(4):
@@ -63,15 +60,14 @@ def even_snail(n, num):
         b += 2
         d -= 2
 
-# a   b
-# 49, 43, -1  6
-# 43, 37, -1  6
-# 37, 31, -1  6
-# 31, 25, -1  6
 
 if n%2 == 1:
     odd_snail(n, num)
+    if num == 1:
+        sx, sy = n//2, n//2
+else:
+    even_snail(n, num)
 
 for s in snail:
-    print(s)
+    print(*s)
 print(sx+1, sy+1)
