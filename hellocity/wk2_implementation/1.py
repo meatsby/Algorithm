@@ -3,13 +3,9 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input())
-
-for _ in range(n):
+ans = 0
+for i in range(int(input().rstrip())):
     word = input().rstrip()
-    for w in range(len(word)-1):
-        if word[w] != word[w+1] and word[w] in word[w+1:]:
-            n -= 1
-            break
-
-print(n)
+    if list(word) == sorted(word, key=word.find):
+        ans += 1
+print(ans)
