@@ -1,52 +1,65 @@
 # 괄호의 값
 
 import sys
-
 input = sys.stdin.readline
 
 s = input().rstrip()
-stack = []
-ans = 0
 
-for i in s:
-    if i == ")":
-        t = 0
-        while len(stack) != 0:
-            top = stack.pop()
-            if top == "(":
-                if t == 0:
-                    stack.append(2)
-                else:
-                    stack.append(2*t)
-                break
-            elif top == "[":
-                print(0)
-                exit(0)
+def check(s):
+    stack = []
+    flag = True
+
+    for i in s:
+        if i == "(" or i == "[":
+            stack.append(i)
+        elif i == ")":
+            if stack and stack[-1] == "(":
+                stack.pop()
             else:
-                t += top
-    elif i == "]":
-        t = 0
-        while len(stack) != 0:
-            top = stack.pop()
-            if top == "[":
-                if t == 0:
-                    stack.append(3)
-                else:
-                    stack.append(3*t)
-                break
-            elif top == "(":
-                print(0)
-                exit(0)
+                flag = False
+        elif i == "]":
+            if stack and stack[-1] == "[":
+                stack.pop()
             else:
-                t += top
-    else:
-        stack.append(i)
+                flag = False
 
-for i in stack:
-    if i == "(" or i == "[":
-        print(0)
-        exit(0)
-    else:
-        ans += i
+    if not stack and flag:  # 스택이 비어 있으며 맞는 괄호식일 경우
+        return True
+    return False
 
-print(ans)
+def calc(s):
+    stack = []
+
+    for i in s:
+        if i == "(" or i == "[":
+            stack.append(i)
+        elif i == ")":
+            if stack[-1] == "(":
+                stack[-1] = 2
+            else:
+                temp = 0
+                for j in range(len(stack)-1, -1, -1):
+                    if stack[j] == "(":  # 괄호를 찾을 때 까지 정수끼리 더해주기
+                        stack[-1] = temp * 2  # 찾으면 2 곱해주고 반복문 탈출
+                        break
+                    else:
+                        d = stack.pop()
+                        temp += d
+        elif i == "]":
+            if stack[-1] == "[":
+                stack[-1] = 3
+            else:
+                temp = 0
+                for j in range(len(stack)-1, -1, -1):
+                    if stack[j] == "[":  # 괄호를 찾을 때 까지 정수끼리 더해주기
+                        stack[-1] = temp * 3  # 찾으면 3 곱해주고 반복문 탈출
+                        break
+                    else:
+                        d = stack.pop()
+                        temp += d
+    return sum(stack)
+
+if check(s):
+    print(calc(s))
+else:
+    print(0)
