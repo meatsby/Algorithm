@@ -35,7 +35,7 @@ while True:
     isUnion = False
     for i in range(n):
         for j in range(n):
-            if visited[i][j] == 0:
+            if visited[i][j] == 0:  # 연합에 소속되었던 도시는 이미 방문했었기 때문에
                 visited[i][j] = 1  # 방문 처리
                 union = bfs(i, j)  # 방문한 도시에 대한 BFS 실행
                 if len(union) > 1:  # 연합이 생성되었을 경우
