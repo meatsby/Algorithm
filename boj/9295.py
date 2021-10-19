@@ -1,4 +1,4 @@
-# 주사워
+# 주사위
 import sys
 input = sys.stdin.readline
 
