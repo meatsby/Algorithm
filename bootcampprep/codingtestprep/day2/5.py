@@ -1,21 +1,18 @@
-# 에라토스테네스의 체
+# 색종이
 import sys
 input = sys.stdin.readline
 
-n, k = map(int, input().split())
-nums = [i for i in range(2, n+1)]
-t = 0
+board = [[0]*100 for _ in range(100)]
 
-while True:
-    m = nums[0]
-    for n in nums:
-        if n%m == 0:
-            ans = n
-            nums.remove(n)
-            t += 1
-        if t == k:
-            break
-    if t == k:
-        break
+for _ in range(int(input())):
+    x, y = map(int, input().split())
+    for i in range(x, x+10):
+        for j in range(y, y+10):
+            board[i][j] = 1
+
+ans = 0
+
+for b in board:
+    ans += sum(b)
 
 print(ans)
