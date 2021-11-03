@@ -1,4 +1,4 @@
-# 줄 세우기
+# 3의 배수
 import sys
 input = sys.stdin.readline
 
