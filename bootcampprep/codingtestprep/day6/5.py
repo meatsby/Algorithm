@@ -1,4 +1,4 @@
-# 색종이 - 2
+# 킹
 from collections import deque
 import sys
 input = sys.stdin.readline
