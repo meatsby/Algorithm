@@ -1,22 +1,20 @@
 # 방 배정
-import math
 import sys
 input = sys.stdin.readline
 
 n, k = map(int, input().split())
-male = [0]*7
-female = [0]*7
+students = [[0]*2 for _ in range(6)]
 ans = 0
 
 for _ in range(n):
     s, y = map(int, input().split())
-    if s == 1:
-        male[y] += 1
-    else:
-        female[y] += 1
+    students[y-1][s-1] += 1
 
-for i in range(1, 6):
-    male[i] = math.ceil(male[i]/k)
-    female[i] = math.ceil(female[i]/k)
+for y in range(6):
+    for s in range(2):
+        if students[y][s]%k == 0:
+            ans += students[y][s]//k
+        else:
+            ans += students[y][s]//k + 1
 
-print(sum(male) + sum(female))
+print(ans)
